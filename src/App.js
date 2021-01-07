@@ -13,7 +13,7 @@ function App() {
 			.then( (token) => {
 				return console.log('Token:', token )
 			}
-    )
+		)
     
   return (
     <div className="App">
