@@ -5,15 +5,17 @@ import firebase from './firebase'
 
 function App() {
 
-  const messaging = firebase.messaging();
-	messaging.requestPermission()
-		.then( () => {
-			return messaging.getToken();
-		})
-			.then( (token) => {
-				return console.log('Token:', token )
-			}
-		)
+  // const messaging = firebase.messaging();
+	// messaging.requestPermission()
+	// 	.then( () => {
+	// 		return messaging.getToken();
+	// 	})
+	// 		.then( (token) => {
+	// 			return console.log('Token:', token )
+	// 		}
+  // 	)
+  
+  firebase.messaging().getToken().then(token => console.log(`token: ${token}`)).catch(() => console.log("user didn't give permission"))
     
   return (
     <div className="App">
@@ -28,7 +30,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn Reactxxx
         </a>
       </header>
     </div>

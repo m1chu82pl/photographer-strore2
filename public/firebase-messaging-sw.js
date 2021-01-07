@@ -12,6 +12,6 @@ firebase.initializeApp({
     appId: "1:805122346153:web:400dfe18ed9f32b37aedb8"
 });
 
-firebase.messaging()
+// firebase.messaging()
 
   

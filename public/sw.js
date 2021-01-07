@@ -1,10 +1,10 @@
 const cacheName = 'site-static-v2';
 const assets = [
     '/',
-    '/index.js',
-    '/favicon.ico',
-    '/logo192.png',
+    '/index.html',
 ];
+
+const self = this;
 
 // eslint-disable-next-line no-restricted-globals
 self.addEventListener('install', e => {
@@ -24,28 +24,14 @@ self.addEventListener("activate", e => {
 
 // eslint-disable-next-line no-restricted-globals
 self.addEventListener('fetch', event => {
+    //console.log('fetch event', event);
     event.respondWith(
-        caches.match(event.request)
-        .then((response) => {
-            if (response) {
-                console.log('response', response);
-                return response
-            }
-            return fetch(event.request)
-                .then((response) => {
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
-                        return response;
-                    }
-                    caches.open(cacheName)
-                        .then((cache) => {
-                            console.log('cache', cache);
-                            cache.put(event.request, response.clone());
-                        });
-                    return response;
-                })
-        })
-        .catch((error) => {
-            console.log('fetch error', error);
+        caches.match(event.request).then(cacheResponse => {
+            return cacheResponse || fetch(event.request).then(async fetchResponse => {
+                const cache = await caches.open(cacheName);
+                cache.put(event.request.url, fetchResponse.clone());
+                return fetchResponse;
+            });
         })
     );
 });
