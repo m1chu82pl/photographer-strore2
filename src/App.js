@@ -1,8 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import firebase from './firebase'
 
 function App() {
+
+  const messaging = firebase.messaging();
+	messaging.requestPermission()
+		.then( () => {
+			return messaging.getToken();
+		})
+			.then( (token) => {
+				return console.log('Token:', token )
+			}
+    )
+    
   return (
     <div className="App">
       <header className="App-header">
