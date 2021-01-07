@@ -23,13 +23,16 @@ self.addEventListener("activate", function(e) {
 
 // eslint-disable-next-line no-restricted-globals
 self.addEventListener('fetch', event => {
-    console.log('fetch event', event);
+    console.log('fetch event', event.request);
     event.respondWith(
         caches.match(event.request).then(cacheResponse => {
             return cacheResponse || fetch(event.request).then(async fetchResponse => {
                 const cache = await caches.open(cacheName);
-                await cache.put(event.request.url, fetchResponse.clone());
+                const unsupported = "chrome-extension";
+                if(!event.request.url.includes(unsupported)) {
+                cache.put(event.request, fetchResponse.clone());
                 return fetchResponse;
+                }
             });
         })
     );
