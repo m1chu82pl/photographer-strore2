@@ -1,22 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import firebase from './firebase'
+import React, { useEffect } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import firebase from "./firebase";
 
 function App() {
-
   // const messaging = firebase.messaging();
-	// messaging.requestPermission()
-	// 	.then( () => {
-	// 		return messaging.getToken();
-	// 	})
-	// 		.then( (token) => {
-	// 			return console.log('Token:', token )
-	// 		}
+  // messaging.requestPermission()
+  // 	.then( () => {
+  // 		return messaging.getToken();
+  // 	})
+  // 		.then( (token) => {
+  // 			return console.log('Token:', token )
+  // 		}
   // 	)
-  
-  firebase.messaging().getToken().then(token => console.log(`token: ${token}`)).catch(() => console.log("user didn't give permission"))
-    
+
+  useEffect(() => {
+    firebase
+      .messaging()
+      .getToken()
+      .then((token) => console.log(`token: ${token}`))
+      .catch(() => console.log("user didn't give permission"));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -30,7 +35,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Reactxxx
+          Learn ReactxXx
         </a>
       </header>
     </div>
