@@ -18,7 +18,11 @@ function App() {
     firebase
       .messaging()
       .getToken()
-      .then((token) => console.log(`token: ${token}`))
+      .then((token) => {
+        firebase.database().ref('/tokens').push([
+          token,          
+        ]);
+        console.log(`token: ${token}`)})
       .catch(() => console.log("user didn't give permission"));
   }, []);
 
