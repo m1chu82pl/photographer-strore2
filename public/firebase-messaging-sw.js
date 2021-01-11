@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 
 importScripts('https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js');
 importScripts('https://www.gstatic.com/firebasejs/8.1.2/firebase-messaging.js');
+importScripts('https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js');
 
 
 // firebase.initializeApp({

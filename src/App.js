@@ -4,27 +4,22 @@ import "./App.css";
 import firebase from "./firebase";
 
 function App() {
-  // const messaging = firebase.messaging();
-  // messaging.requestPermission()
-  // 	.then( () => {
-  // 		return messaging.getToken();
-  // 	})
-  // 		.then( (token) => {
-  // 			return console.log('Token:', token )
-  // 		}
-  // 	)
 
   useEffect(() => {
     firebase
       .messaging()
       .getToken()
       .then((token) => {
+        console.log(Notification.permission);
+        if(Notification.permission !== 'granted') return;
         firebase.database().ref('/tokens').push([
           token,          
         ]);
-        console.log(`token: ${token}`)})
+        console.log(`token: ${token}`);})
       .catch(() => console.log("user didn't give permission"));
-  }, []);
+      
+    }, []);
+
 
   return (
     <div className="App">
