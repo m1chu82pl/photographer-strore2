@@ -23,15 +23,34 @@ self.addEventListener("activate", e => {
 });
 
 // eslint-disable-next-line no-restricted-globals
-self.addEventListener('fetch', event => {
-    //console.log('fetch event', event);
-    event.respondWith(
-        caches.match(event.request).then(cacheResponse => {
-            return cacheResponse || fetch(event.request).then(async fetchResponse => {
-                const cache = await caches.open(cacheName);
-                cache.put(event.request.url, fetchResponse.clone());
-                return fetchResponse;
-            });
-        })
+
+self.addEventListener('fetch', e => {
+    if (!(e.request.url.indexOf('http') === 0)) return;   
+    e.respondWith(
+      caches
+        .match(e.request)
+        .then(
+          cacheRes =>
+            cacheRes ||
+            fetch(e.request).then(fetchRes =>
+              caches.open(cacheName).then(cache => {
+                cache.put(e.request.url, fetchRes.clone());
+                // check cached items size
+                limitCacheSize(cacheName, 75);
+                return fetchRes;
+              })
+            )
+        )
+        .catch(() => caches.match('/index.html'))
     );
-});
+  });
+  
+  const limitCacheSize = (name, size) => {
+    caches.open(name).then(cache => {
+      cache.keys().then(keys => {
+        if (keys.length > size) {
+          cache.delete(keys[0]).then(limitCacheSize(name, size));
+        }
+      });
+    });
+  };
