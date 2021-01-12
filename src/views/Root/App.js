@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import "./App.css";
 // import firebase from "./firebase";
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Section from './components/Section';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Section from '../../components/Section';
 
 function App() {
 
