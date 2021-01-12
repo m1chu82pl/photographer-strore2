@@ -1,4 +1,4 @@
-const cacheName = 'site-static-v2';
+const cacheName = 'site-static-v357';
 const assets = [
     '/',
     '/index.html',
@@ -25,7 +25,8 @@ self.addEventListener("activate", e => {
 // eslint-disable-next-line no-restricted-globals
 
 self.addEventListener('fetch', e => {
-    if (!(e.request.url.indexOf('http') === 0)) return;   
+    // console.log(e.request);
+    if (!(e.request.url.includes('http'))) return;   
     e.respondWith(
       caches
         .match(e.request)
@@ -35,7 +36,6 @@ self.addEventListener('fetch', e => {
             fetch(e.request).then(fetchRes =>
               caches.open(cacheName).then(cache => {
                 cache.put(e.request.url, fetchRes.clone());
-                // check cached items size
                 limitCacheSize(cacheName, 75);
                 return fetchRes;
               })
