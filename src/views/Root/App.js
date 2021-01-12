@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
 import "./App.css";
+import { BrowserRouter, Route } from 'react-router-dom'
 // import firebase from "./firebase";
 
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import Section from '../../components/Section';
+import MainView from '../MainView/MainView';
+import NatureView from '../NatureView/NatureView';
+import PortraitView from '../PortraitView/PortraitView';
+import ReportageView from '../ReportageView/ReportageView';
 
 function App() {
 
@@ -25,11 +27,15 @@ function App() {
 
 
   return (
+    <BrowserRouter>
     <div className="App">
-      <Header/>
-      <Section/>
-      <Footer/>
+      <h1>hello photographers</h1>
+      <Route path="/" component={MainView} />
+      <Route path="/nature" component={NatureView} />
+      <Route path="/portrait" component={PortraitView} />
+      <Route path="/reportage" component={ReportageView} />
     </div>
+    </BrowserRouter>
   );
 }
 
