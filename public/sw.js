@@ -1,4 +1,4 @@
-const cacheName = 'site-static-v357';
+const cacheName = 'siteStatic-v357';
 const assets = [
     '/',
     '/index.html',
@@ -6,7 +6,6 @@ const assets = [
 
 const self = this;
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener('install', e => {
     console.log('ServiceWorker: Install');
     e.waitUntil(
@@ -17,12 +16,9 @@ self.addEventListener('install', e => {
     );
 });
 
-// eslint-disable-next-line no-restricted-globals
 self.addEventListener("activate", e => {
     console.log("ServiceWorker: Activ");
 });
-
-// eslint-disable-next-line no-restricted-globals
 
 self.addEventListener('fetch', e => {
     // console.log(e.request);
