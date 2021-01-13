@@ -9,8 +9,8 @@ const NatureView = () => {
     <>
     <p>Nature View</p>
     <Header/>
-    <Footer/>
     <Section/>
+    <Footer/>
     </>
    );
 }

@@ -4,10 +4,10 @@ import Header from '../../components/mainWebSide/Header';
 import Footer from '../../components/mainWebSide/Footer';
 import Section from '../../components/mainWebSide/Section';
 
-const MainView = () => {
+const DocumentaryView = () => {
   return ( 
     <>
-    <p>Main View</p>
+    <p>Documentary View</p>
     <Header/>
     <Section/>
     <Footer/>
@@ -15,4 +15,4 @@ const MainView = () => {
    );
 }
  
-export default MainView;
+export default DocumentaryView;

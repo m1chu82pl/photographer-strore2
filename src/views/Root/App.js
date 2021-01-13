@@ -6,7 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import MainView from '../MainView/MainView';
 import NatureView from '../NatureView/NatureView';
 import PortraitView from '../PortraitView/PortraitView';
-import ReportageView from '../ReportageView/ReportageView';
+import DocumentaryView from '../DocumentaryView/DocumentaryView';
 
 function App() {
 
@@ -30,10 +30,10 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <h1>hello photographers</h1>
-      <Route path="/" component={MainView} />
+      <Route exact path="/" component={MainView} />
       <Route path="/nature" component={NatureView} />
       <Route path="/portrait" component={PortraitView} />
-      <Route path="/reportage" component={ReportageView} />
+      <Route path="/documentary" component={DocumentaryView} />
     </div>
     </BrowserRouter>
   );
