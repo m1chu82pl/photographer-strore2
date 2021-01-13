@@ -1,0 +1,18 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.navigationPoint {
+  list-style: none;
+  
+  &NavLink {
+    text-decoration: none;
+    font-size: 30px;
+    
+    &Active {
+      // font-weight: 800;
+      color: rgb(186, 216, 78);
+    }
+  }
+}
