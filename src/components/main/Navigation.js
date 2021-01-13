@@ -6,24 +6,41 @@ import styles from "./Navigation.module.scss";
 const Navigation = () => {
   const [scrollY, setScrollY] = useState(0);
 
-  function showX() {
+  function showY() {
     setScrollY(window.pageYOffset.toFixed(2));
   }
 
+  const ulRef = React.createRef();
+
+  const onScroll = (event) => {
+    ulRef.current.getBoundingClientRect(event);
+    console.log("scrolling...");
+  };
+
   useEffect(() => {
-    const watchScroll = () => {
-      window.addEventListener("scroll", showX);
+    const windowTop = () => {
+      window.addEventListener("scroll", onScroll);
     };
+    const watchScroll = () => {
+      window.addEventListener("scroll", showY);
+    };
+
+    windowTop();
     watchScroll();
     return () => {
-      window.removeEventListener("scroll", showX);
+      window.removeEventListener("scroll", windowTop);
+      window.removeEventListener("scroll", showY);
     };
   }, []);
 
   return (
     <nav>
-      <div className={scrollY <= 1000 ? styles.position : styles.positionActive }>Scroll position: {scrollY} px</div>
-      <ul className={styles.wrapper}>
+      <div
+        className={scrollY <= 1000 ? styles.position : styles.positionActive}
+      >
+        Scroll position: {scrollY} px
+      </div>
+      <ul className={styles.wrapper} ref={ulRef}>
         <li className={styles.navigationPoint}>
           <NavLink
             exact
