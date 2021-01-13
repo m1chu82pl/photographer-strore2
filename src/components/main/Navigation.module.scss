@@ -3,22 +3,34 @@
   top: 100vh;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  
+  .navigationPoint {
+    list-style: none;
+    margin: 10px auto;
+    
+    &NavLink {
+      text-decoration: none;
+      font-size: 30px;
+      transition: .4s;
+      &:hover {
+        color: rgb(131, 122, 108);
+      }
+      
+      &Active {
+        color: rgb(162, 187, 73);
+      }
+    }
+  }
 }
 
-.navigationPoint {
-  list-style: none;
-  margin: 10px auto;
-  
-  &NavLink {
-    text-decoration: none;
-    font-size: 30px;
-    transition: .4s;
-    &:hover {
-      color: rgb(131, 122, 108);
-    }
-    
-    &Active {
-      color: rgb(162, 187, 73);
-    }
+.position {
+  position: fixed;
+  top: 80%;
+  left: 20%;
+
+  &Active {
+    @extend .position;
+
+    background-color: red;
   }
 }
