@@ -28,7 +28,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className={styles.app}>
-        <h1>hello photographers</h1>
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/nature" component={NatureView} />

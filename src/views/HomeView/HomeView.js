@@ -1,13 +1,13 @@
 import React from 'react';
 
-import Navigation from '../../components/mainWebSide/Navigation';
-import Section from '../../components/mainWebSide/Section';
-import Footer from '../../components/mainWebSide/Footer';
+import Navigation from '../../components/main/Navigation';
+import Section from '../../components/main/Section';
+import Footer from '../../components/main/Footer';
 
-const MainView = () => {
+const HomeView = () => {
   return ( 
     <>
-    <p>Main View</p>
+    <p>Home View</p>
     <Navigation/>
     <Section/>
     <Footer/>
@@ -15,4 +15,4 @@ const MainView = () => {
    );
 }
  
-export default MainView;
+export default HomeView;
