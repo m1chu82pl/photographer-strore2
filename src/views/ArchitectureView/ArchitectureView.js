@@ -4,10 +4,10 @@ import Navigation from '../../components/mainWebSide/Navigation';
 import Section from '../../components/mainWebSide/Section';
 import Footer from '../../components/mainWebSide/Footer';
 
-const PortraitView = () => {
+const ArchitectureView = () => {
   return ( 
     <>
-    <p>Portrait View</p>
+    <p>Architecture View</p>
     <Navigation/>
     <Section/>
     <Footer/>
@@ -15,4 +15,4 @@ const PortraitView = () => {
    );
 }
  
-export default PortraitView;
+export default ArchitectureView;

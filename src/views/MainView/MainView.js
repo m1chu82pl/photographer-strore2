@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Header from '../../components/mainWebSide/Header';
-import Footer from '../../components/mainWebSide/Footer';
+import Navigation from '../../components/mainWebSide/Navigation';
 import Section from '../../components/mainWebSide/Section';
+import Footer from '../../components/mainWebSide/Footer';
 
 const MainView = () => {
   return ( 
     <>
     <p>Main View</p>
-    <Header/>
+    <Navigation/>
     <Section/>
     <Footer/>
     </>
