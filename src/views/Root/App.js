@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "./App.css";
+
+import styles from "./App.module.scss"
 // import firebase from "./firebase";
 
 import MainView from "../MainView/MainView";
@@ -26,7 +27,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className={styles.app}>
         <h1>hello photographers</h1>
         <Switch>
           <Route exact path="/" component={MainView} />
