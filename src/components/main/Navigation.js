@@ -6,41 +6,31 @@ import styles from "./Navigation.module.scss";
 const Navigation = () => {
   const [scrollY, setScrollY] = useState(0);
 
-  function showY() {
-    setScrollY(window.pageYOffset.toFixed(2));
-  }
-
   const ulRef = React.createRef();
 
-  const onScroll = (event) => {
-    ulRef.current.getBoundingClientRect(event);
-    console.log("scrolling...");
+  const showPositionY = () => {
+    if (ulRef.current !== null) {
+      const { y } = ulRef.current.getBoundingClientRect();
+      setScrollY(y);
+      console.log('menu od góry ekranu: ', y);
+    }
   };
 
-  useEffect(() => {
-    const windowTop = () => {
-      window.addEventListener("scroll", onScroll);
-    };
-    const watchScroll = () => {
-      window.addEventListener("scroll", showY);
-    };
-
-    windowTop();
-    watchScroll();
+  useEffect(() => {  
+    window.addEventListener("scroll", showPositionY);
     return () => {
-      window.removeEventListener("scroll", windowTop);
-      window.removeEventListener("scroll", showY);
+      window.removeEventListener("scroll", showPositionY);
     };
-  }, []);
+  });
 
   return (
     <nav>
-      <div
-        className={scrollY <= 1000 ? styles.position : styles.positionActive}
+      {/* <div
+        className={scrollY >= 0 ? styles.position : styles.positionSticky}
       >
         Scroll position: {scrollY} px
-      </div>
-      <ul className={styles.wrapper} ref={ulRef}>
+      </div> */}
+      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky} ref={ulRef}>
         <li className={styles.navigationPoint}>
           <NavLink
             exact
