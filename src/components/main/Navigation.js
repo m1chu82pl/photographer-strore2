@@ -30,7 +30,8 @@ const Navigation = () => {
       >
         Scroll position: {scrollY} px
       </div> */}
-      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky} ref={ulRef}>
+      <div className={styles.checker} ref={ulRef}>s</div>
+      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky} >
         <li className={styles.navigationPoint}>
           <NavLink
             exact

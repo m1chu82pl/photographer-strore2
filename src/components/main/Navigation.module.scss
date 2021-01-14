@@ -5,9 +5,8 @@
   grid-template-columns: repeat(5, 1fr);
 
   &Sticky {
-    // @extend .wrapper 
     position: fixed;
-    top: 10vh;
+    top: 0;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
@@ -29,6 +28,11 @@
       }
     }
   }
+}
+
+.checker {
+  position: relative;
+  top: 100vh;
 }
 
 .position {
