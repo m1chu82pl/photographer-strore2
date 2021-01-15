@@ -5,22 +5,30 @@ import styles from "./Navigation.module.scss";
 
 const Navigation = () => {
   const [scrollY, setScrollY] = useState(0);
-
+  const [pageYPosition, setPageYPosition] = useState(0);
+  
   const ulRef = React.createRef();
-
-  const showPositionY = () => {
+  
+  const showNavigationPosition = () => {
     if (ulRef.current !== null) {
       const { y } = ulRef.current.getBoundingClientRect();
       setScrollY(y);
-      console.log('menu od góry ekranu: ', y);
+      // setPageYPosition(window.pageYOffset);
+      console.log("menu od góry ekranU: ", scrollY);
+      // console.log(window.pageYOffset);
+      // console.log("pageYPosition: ", pageYPosition);
     }
   };
-
-  useEffect(() => {  
-    window.addEventListener("scroll", showPositionY);
-    return () => {
-      window.removeEventListener("scroll", showPositionY);
-    };
+  
+  const showPageYOffsetPosition = () => {
+    setPageYPosition(window.pageYOffset);
+    // console.log(window.pageYOffset);
+    // console.log("pageYPosition: ", pageYPosition);
+  };
+  
+  useEffect(() => {
+  window.addEventListener("scroll", showPageYOffsetPosition);
+    showNavigationPosition();
   });
 
   return (
@@ -30,8 +38,10 @@ const Navigation = () => {
       >
         Scroll position: {scrollY} px
       </div> */}
-      <div className={styles.checker} ref={ulRef}>s</div>
-      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky} >
+      <div className={styles.checker} ref={ulRef}>
+        s
+      </div>
+      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky}>
         <li className={styles.navigationPoint}>
           <NavLink
             exact
