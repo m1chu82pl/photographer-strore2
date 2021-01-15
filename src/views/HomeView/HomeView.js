@@ -8,8 +8,8 @@ const HomeView = () => {
   return ( 
     <>
     <p>Home View</p>
-    <Navigation/>
     <Section/>
+    <Navigation/>
     <Footer/>
     </>
    );
