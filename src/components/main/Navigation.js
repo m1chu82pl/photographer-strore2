@@ -1,48 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { NavLink } from "react-router-dom";
 
 import styles from "./Navigation.module.scss";
 
 const Navigation = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [pageYPosition, setPageYPosition] = useState(0);
+  const [navPosition, setNavPosition] = useState();
+  const [scrollPosition, setScrollPosition] = useState(0);
   
-  const ulRef = React.createRef();
-  
-  const showNavigationPosition = () => {
-    if (ulRef.current !== null) {
-      const { y } = ulRef.current.getBoundingClientRect();
-      setScrollY(y);
-      // setPageYPosition(window.pageYOffset);
-      console.log("menu od góry ekranU: ", scrollY);
-      // console.log(window.pageYOffset);
-      // console.log("pageYPosition: ", pageYPosition);
+
+  const ulRef = useCallback((node) => {
+    if (node !== null) {
+      setNavPosition(node.getBoundingClientRect().y.toFixed(1));
     }
-  };
-  
-  const showPageYOffsetPosition = () => {
-    setPageYPosition(window.pageYOffset);
-    // console.log(window.pageYOffset);
-    // console.log("pageYPosition: ", pageYPosition);
+  }, []);
+
+  console.log("nav position: ", navPosition);
+  console.log("scroll: ", scrollPosition);
+
+  const handleScroll = () => {
+      const position = window.pageYOffset.toFixed(1);
+      setScrollPosition(position);
   };
   
   useEffect(() => {
-  window.addEventListener("scroll", showPageYOffsetPosition);
-    showNavigationPosition();
-  });
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
+
+  
 
   return (
-    <nav>
-      {/* <div
-        className={scrollY >= 0 ? styles.position : styles.positionSticky}
-      >
-        Scroll position: {scrollY} px
-      </div> */}
-      <div className={styles.checker} ref={ulRef}>
+    <nav ref={ulRef}>
+      <div className={styles.checker} >
         s
       </div>
-      <ul className={scrollY >= 0 ? styles.wrapper : styles.wrapperSticky}>
-        <li className={styles.navigationPoint}>
+      <ul  className={navPosition >= 0 ? styles.wrapper : styles.wrapperSticky}>
+        <li  className={styles.navigationPoint}>
           <NavLink
             exact
             activeClassName={styles.navigationPointNavLinkActive}
