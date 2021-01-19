@@ -81,54 +81,56 @@ const Navigation = () => {
           </li>
         </ul>
       ) : (
-        <ul className={styles.wrapperSticky}>
-          <li className={styles.navigationPoint}>
-            <NavLink
-              exact
-              activeClassName={styles.navigationPointNavLinkActive}
-              className={styles.navigationPointNavLink}
-              to="/"
-            >
-              home
-            </NavLink>
-          </li>
-          <li className={styles.navigationPoint}>
-            <NavLink
-              activeClassName={styles.navigationPointNavLinkActive}
-              className={styles.navigationPointNavLink}
-              to="/nature"
-            >
-              nature
-            </NavLink>
-          </li>
-          <li className={styles.navigationPoint}>
-            <NavLink
-              activeClassName={styles.navigationPointNavLinkActive}
-              className={styles.navigationPointNavLink}
-              to="/portrait"
-            >
-              portrait
-            </NavLink>
-          </li>
-          <li className={styles.navigationPoint}>
-            <NavLink
-              activeClassName={styles.navigationPointNavLinkActive}
-              className={styles.navigationPointNavLink}
-              to="/documentary"
-            >
-              documentary
-            </NavLink>
-          </li>
-          <li className={styles.navigationPoint}>
-            <NavLink
-              activeClassName={styles.navigationPointNavLinkActive}
-              className={styles.navigationPointNavLink}
-              to="/architecture"
-            >
-              architecture
-            </NavLink>
-          </li>
-        </ul>
+        <div className={styles.wrapperSticky}>
+          <ul className={styles.wrapperStickyNav}>
+            <li className={styles.navigationPoint}>
+              <NavLink
+                exact
+                activeClassName={styles.navigationPointNavLinkActive}
+                className={styles.navigationPointNavLink}
+                to="/"
+              >
+                home
+              </NavLink>
+            </li>
+            <li className={styles.navigationPoint}>
+              <NavLink
+                activeClassName={styles.navigationPointNavLinkActive}
+                className={styles.navigationPointNavLink}
+                to="/nature"
+              >
+                nature
+              </NavLink>
+            </li>
+            <li className={styles.navigationPoint}>
+              <NavLink
+                activeClassName={styles.navigationPointNavLinkActive}
+                className={styles.navigationPointNavLink}
+                to="/portrait"
+              >
+                portrait
+              </NavLink>
+            </li>
+            <li className={styles.navigationPoint}>
+              <NavLink
+                activeClassName={styles.navigationPointNavLinkActive}
+                className={styles.navigationPointNavLink}
+                to="/documentary"
+              >
+                documentary
+              </NavLink>
+            </li>
+            <li className={styles.navigationPoint}>
+              <NavLink
+                activeClassName={styles.navigationPointNavLinkActive}
+                className={styles.navigationPointNavLink}
+                to="/architecture"
+              >
+                architecture
+              </NavLink>
+            </li>
+          </ul>
+        </div>
       )}
     </nav>
   );
