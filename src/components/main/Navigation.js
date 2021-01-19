@@ -6,7 +6,6 @@ import styles from "./Navigation.module.scss";
 const Navigation = () => {
   const [navPosition, setNavPosition] = useState();
   const [scrollPosition, setScrollPosition] = useState(0);
-  
 
   const ulRef = useCallback((node) => {
     if (node !== null) {
@@ -18,74 +17,75 @@ const Navigation = () => {
   console.log("scroll: ", scrollPosition);
 
   const handleScroll = () => {
-      const position = window.pageYOffset.toFixed(1);
-      setScrollPosition(position);
+    const position = window.pageYOffset.toFixed(1);
+    setScrollPosition(position);
   };
-  
+
   useEffect(() => {
-      window.addEventListener('scroll', handleScroll);
-  
-      return () => {
-          window.removeEventListener('scroll', handleScroll);
-      };
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  
-
   return (
-    <nav ref={ulRef}>
-      <div className={styles.checker} >
-        s
-      </div>
-      <ul  className={navPosition >= 0 ? styles.wrapper : styles.wrapperSticky}>
-        <li  className={styles.navigationPoint}>
-          <NavLink
-            exact
-            activeClassName={styles.navigationPointNavLinkActive}
-            className={styles.navigationPointNavLink}
-            to="/"
-          >
-            home
-          </NavLink>
-        </li>
-        <li className={styles.navigationPoint}>
-          <NavLink
-            activeClassName={styles.navigationPointNavLinkActive}
-            className={styles.navigationPointNavLink}
-            to="/nature"
-          >
-            nature
-          </NavLink>
-        </li>
-        <li className={styles.navigationPoint}>
-          <NavLink
-            activeClassName={styles.navigationPointNavLinkActive}
-            className={styles.navigationPointNavLink}
-            to="/portrait"
-          >
-            portrait
-          </NavLink>
-        </li>
-        <li className={styles.navigationPoint}>
-          <NavLink
-            activeClassName={styles.navigationPointNavLinkActive}
-            className={styles.navigationPointNavLink}
-            to="/documentary"
-          >
-            documentary
-          </NavLink>
-        </li>
-        <li className={styles.navigationPoint}>
-          <NavLink
-            activeClassName={styles.navigationPointNavLinkActive}
-            className={styles.navigationPointNavLink}
-            to="/architecture"
-          >
-            architecture
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+      <nav ref={ulRef}>
+        {/* <div className={styles.checker}>s</div> */}
+        <ul
+          className={
+            scrollPosition < navPosition ? styles.wrapper : styles.wrapperSticky
+          }
+          // className={styles.wrapper}
+        >
+          <li className={styles.navigationPoint}>
+            <NavLink
+              exact
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/"
+            >
+              home
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/nature"
+            >
+              nature
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/portrait"
+            >
+              portrait
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/documentary"
+            >
+              documentary
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/architecture"
+            >
+              architecture
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
   );
 };
 

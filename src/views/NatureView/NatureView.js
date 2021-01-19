@@ -8,8 +8,8 @@ const NatureView = () => {
   return ( 
     <>
     <p>Nature View</p>
-    <Navigation/>
     <Section/>
+    <Navigation/>
     <Footer/>
     </>
    );
