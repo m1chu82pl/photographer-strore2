@@ -1,6 +1,24 @@
 .section {
   height: 100vh;
   width: 100%;
+  background-color: blue;
+
+  .slider {
+    // position: relative;
+    width: auto;
+    height: 100%;
+    background-image: url(../../assets/navigation/slider1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &Article {
+      position: absolute;
+      bottom: 80vh;
+      left: 0;
+
+    }
+  }
   
   h2 {
     font-size: 32px;

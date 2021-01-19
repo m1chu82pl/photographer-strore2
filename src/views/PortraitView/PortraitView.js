@@ -8,8 +8,8 @@ const PortraitView = () => {
   return ( 
     <>
     <p>Portrait View</p>
-    <Navigation/>
     <Section/>
+    <Navigation/>
     <Footer/>
     </>
    );

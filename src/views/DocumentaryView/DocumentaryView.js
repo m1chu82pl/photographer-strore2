@@ -8,8 +8,8 @@ const DocumentaryView = () => {
   return ( 
     <>
     <p>Documentary View</p>
-    <Navigation/>
     <Section/>
+    <Navigation/>
     <Footer/>
     </>
    );

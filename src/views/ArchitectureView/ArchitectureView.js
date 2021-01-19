@@ -8,8 +8,8 @@ const ArchitectureView = () => {
   return ( 
     <>
     <p>Architecture View</p>
-    <Navigation/>
     <Section/>
+    <Navigation/>
     <Footer/>
     </>
    );

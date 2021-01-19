@@ -41,23 +41,3 @@
     }
   }
 }
-
-.checker {
-  position: relative;
-  top: 100vh;
-}
-
-.position {
-  position: relative;
-  top: 80%;
-  left: 20%;
-  transition: 0.5s;
-
-  &Sticky {
-    // @extend .position;
-    position: fixed;
-    top: 0;
-    left: 20%;
-    background-color: red;
-  }
-}
