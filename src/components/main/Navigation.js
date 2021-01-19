@@ -30,14 +30,9 @@ const Navigation = () => {
   }, []);
 
   return (
-      <nav ref={ulRef}>
-        {/* <div className={styles.checker}>s</div> */}
-        <ul
-          className={
-            scrollPosition < navPosition ? styles.wrapper : styles.wrapperSticky
-          }
-          // className={styles.wrapper}
-        >
+    <nav ref={ulRef}>
+      {scrollPosition < navPosition - 10 ? (
+        <ul className={styles.wrapper}>
           <li className={styles.navigationPoint}>
             <NavLink
               exact
@@ -85,7 +80,57 @@ const Navigation = () => {
             </NavLink>
           </li>
         </ul>
-      </nav>
+      ) : (
+        <ul className={styles.wrapperSticky}>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              exact
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/"
+            >
+              home
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/nature"
+            >
+              nature
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/portrait"
+            >
+              portrait
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/documentary"
+            >
+              documentary
+            </NavLink>
+          </li>
+          <li className={styles.navigationPoint}>
+            <NavLink
+              activeClassName={styles.navigationPointNavLinkActive}
+              className={styles.navigationPointNavLink}
+              to="/architecture"
+            >
+              architecture
+            </NavLink>
+          </li>
+        </ul>
+      )}
+    </nav>
   );
 };
 
