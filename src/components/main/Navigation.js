@@ -34,7 +34,7 @@ const Navigation = () => {
 
   return (
     <nav ref={ulRef}>
-      {scrollPosition < navPosition - 5 ? (
+      {scrollPosition < navPosition - 1 ? (
         <ul className={styles.wrapper}>
           <li className={styles.navigationPoint}>
             <NavLink
