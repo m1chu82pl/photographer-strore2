@@ -7,7 +7,6 @@ import Footer from '../../components/main/Footer';
 const HomeView = () => {
   return ( 
     <>
-    <p>Home View</p>
     <Section/>
     <Navigation/>
     <Footer/>

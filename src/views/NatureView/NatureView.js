@@ -7,7 +7,6 @@ import Footer from '../../components/main/Footer';
 const NatureView = () => {
   return ( 
     <>
-    <p>Nature View</p>
     <Section/>
     <Navigation/>
     <Footer/>

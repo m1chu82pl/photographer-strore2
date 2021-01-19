@@ -7,7 +7,6 @@ import Footer from '../../components/main/Footer';
 const DocumentaryView = () => {
   return ( 
     <>
-    <p>Documentary View</p>
     <Section/>
     <Navigation/>
     <Footer/>

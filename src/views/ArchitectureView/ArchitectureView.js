@@ -7,7 +7,6 @@ import Footer from '../../components/main/Footer';
 const ArchitectureView = () => {
   return ( 
     <>
-    <p>Architecture View</p>
     <Section/>
     <Navigation/>
     <Footer/>

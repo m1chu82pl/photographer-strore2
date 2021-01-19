@@ -7,7 +7,6 @@ import Footer from '../../components/main/Footer';
 const PortraitView = () => {
   return ( 
     <>
-    <p>Portrait View</p>
     <Section/>
     <Navigation/>
     <Footer/>
