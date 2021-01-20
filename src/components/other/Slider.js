@@ -23,12 +23,11 @@ const Slider = () => {
 
     return (
       <div className="App">
-        <h3>Slide Effect</h3>
         <div className="slide-container">
           <Slide ref={slideRef} {...properties}>
             {slideImages.map((each, index) => (
               <div key={index} className="each-slide">
-                <img className="lazy" src={each} alt="sample" />
+                <img src={each} alt="sample" />
               </div>
             ))}
           </Slide>
