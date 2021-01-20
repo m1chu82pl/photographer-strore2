@@ -1,33 +1,40 @@
-import React from "react";
-import { Slide } from 'react-slideshow-image';
-import styles from "./Slider.module.scss";
+import React, { useState } from "react";
+import { Slide } from "react-slideshow-image";
+import "./SliderStyles.css";
+import "react-slideshow-image/dist/styles.css";
+import slider1 from '../../assets/navigation/slider1.jpg';
+import slider2 from '../../assets/navigation/slider2.jpg';
+import slider3 from '../../assets/navigation/slider3.jpg';
 
+const Slider = () => {
+    const slideRef = React.createRef();
+  
+    const properties = {
+      duration: 5000,
+      autoplay: true,
+      transitionDuration: 500,
+      arrows: true,
+      infinite: true,
+      easing: "ease"
+    };
+    const slideImages = [
+      slider1, slider2, slider3
+    ];
 
-const slideImages = [
-  'src/assets/navigation/slider1',
-  'src/assets/navigation/slider2',
-  'src/assets/navigation/slider3'
-];
-
-const Slideshow = () => {
     return (
-      <div className={styles.slideContainer}>
-        <Slide>
-          <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider1.jpg)`}}>
-            </div>
-          </div>
-          <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider2.jpg)`}}>
-            </div>
-          </div>
-          <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider3.jpg)`}}>
-            </div>
-          </div>
-        </Slide>
+      <div className="App">
+        <h3>Slide Effect</h3>
+        <div className="slide-container">
+          <Slide ref={slideRef} {...properties}>
+            {slideImages.map((each, index) => (
+              <div key={index} className="each-slide">
+                <img className="lazy" src={each} alt="sample" />
+              </div>
+            ))}
+          </Slide>
+        </div>
       </div>
-    )
+    );
 }
 
-export default Slideshow;
+export default Slider;
