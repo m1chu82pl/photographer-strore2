@@ -6,9 +6,8 @@ import Slider from '../other/Slider';
 const Section = () => {
   return (
     <div className={styles.section}>
-      <div className={styles.slider}>
         <Slider/>
-      <h2 className={styles.sliderArticle}>
+      <h2 className={styles.sectionArticle}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem in cum soluta perferendis debitis voluptatibus deserunt, praesentium ipsa itaque libero esse asperiores architecto vero delectus quae nulla neque dolore.
         Exercitationem architecto ex sunt. Necessitatibus accusamus quo quisquam, repellendus atque nesciunt, distinctio ab cumque iusto illo, error repellat et possimus? Similique adipisci totam saepe ipsam molestiae fuga quam aut dignissimos.
         Quaerat provident repudiandae temporibus culpa! Eveniet totam dolores rem quaerat doloremque dolore, saepe necessitatibus incidunt inventore, harum deserunt nostrum mollitia culpa qui quis id architecto debitis eum! Blanditiis, dignissimos sed.
@@ -24,7 +23,6 @@ const Section = () => {
         Sapiente distinctio vel dolore sed. Error impedit eligendi atque eos esse, numquam quas sint odit, laborum ipsum nihil repellendus magnam voluptatibus voluptas, necessitatibus laboriosam! At commodi tenetur sint. Aliquam, ipsa?
         Iste tempora expedita aut, veniam eligendi minima? Quidem, eum. Cum veniam mollitia dolores temporibus illo cupiditate hic nam doloremque ex id velit, quibusdam iusto quae labore facilis, nisi odio? Possimus!
       </h2>
-      </div>
     </div>
   );
 };

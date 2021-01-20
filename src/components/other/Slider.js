@@ -14,15 +14,15 @@ const Slideshow = () => {
       <div className={styles.slideContainer}>
         <Slide>
           <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
+            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider1.jpg)`}}>
             </div>
           </div>
           <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
+            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider2.jpg)`}}>
             </div>
           </div>
           <div className={styles.eachSlide}>
-            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
+            <div style={{'backgroundImage': `url(../../../../assets/navigation/slider3.jpg)`}}>
             </div>
           </div>
         </Slide>

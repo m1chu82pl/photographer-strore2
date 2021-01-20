@@ -1,7 +1,16 @@
-.eachSlide > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  height: 350px;
+.eachSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 500px;
+  height: 300px;
+  background: rgb(16, 131, 77);
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 350px;
+  }
 }
