@@ -1,24 +1,20 @@
-.slidesWrapper {
+.eachSlide {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  background-size: cover;
+  background-position: center;
+  // height: 50%;
+  overflow: hidden;
 
-  width: 100%;
-  height: auto;
-  margin: auto;
-  
-  
-  .eachSlide {
-
-    display: flex;
-    align-items: center;
-    // justify-content: space-between;
-    background-size: cover;
-    background-position: center;
-    height: 50%;
-
-    img {
-      // display: none;
-      // height: 100;
-      width: auto;
-    }
+  img {
+    // display: none;
+    height: auto;
+    width: 100%;
   }
-  
 }

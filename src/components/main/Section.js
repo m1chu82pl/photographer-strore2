@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./Section.module.scss";
 
-// import Slider from '../other/Slider';
+import Slider from '../other/Slider';
 
 const Section = () => {
   return (
     <>
       <div className={styles.section}>
-        {/* <Slider/> */}
+        <Slider/>
         </div>
       <h2 className={styles.sectionArticle}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
