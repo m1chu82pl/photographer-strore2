@@ -1,10 +1,13 @@
 import React from "react";
 import styles from "./Section.module.scss";
 
+import Slider from '../other/Slider';
+
 const Section = () => {
   return (
     <div className={styles.section}>
       <div className={styles.slider}>
+        <Slider/>
       <h2 className={styles.sliderArticle}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque exercitationem in cum soluta perferendis debitis voluptatibus deserunt, praesentium ipsa itaque libero esse asperiores architecto vero delectus quae nulla neque dolore.
         Exercitationem architecto ex sunt. Necessitatibus accusamus quo quisquam, repellendus atque nesciunt, distinctio ab cumque iusto illo, error repellat et possimus? Similique adipisci totam saepe ipsam molestiae fuga quam aut dignissimos.
