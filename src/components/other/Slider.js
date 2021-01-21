@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
-// import styles from "./Slider.module.scss";
-import './Slider.css';
+import styles from "./Slider.module.scss";
+// import './Slider.css';
 
 
 
@@ -25,22 +25,22 @@ import slider3 from "../../assets/navigation/slider3.jpg";
       setCurrent(current === 0 ? length - 1 : current - 1);
     };
   
-    if (!Array.isArray(imagesArray) || imagesArray.length <= 0) {
+    if (!Array.isArray(imagesArray) || length <= 0) {
       return null;
     }
   
     return (
-      <section className='slider'>
-        <FaArrowAltCircleLeft className='left-arrow' onClick={prevSlide} />
-        <FaArrowAltCircleRight className='right-arrow' onClick={nextSlide} />
+      <section className={styles.slider}>
+        <FaArrowAltCircleLeft className={styles.leftArrow} onClick={prevSlide} />
+        <FaArrowAltCircleRight className={styles.rightArrow} onClick={nextSlide} />
         {imagesArray.map((slide, index) => {
           return (
             <div
-              className={index === current ? 'slide active' : 'slide'}
+              className={index === current ? `${styles.slideActive}` : `${styles.slide}`}
               key={index}
             >
               {index === current && (
-                <img src={slide} alt='travel' className='image' />
+                <img src={slide} alt='travel' className={styles.image} />
               )}
             </div>
           );
