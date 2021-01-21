@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { IconContext } from "react-icons";
 import {
   IoIosArrowDroprightCircle,
@@ -19,8 +19,13 @@ const ImageSlider = () => {
   const [current, setCurrent] = useState(0);
   const length = imagesArray.length;
 
+  useInterval(() => {
+    nextSlide();
+  }, 3000);
+
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
+    
   };
 
   const prevSlide = () => {
@@ -29,6 +34,24 @@ const ImageSlider = () => {
 
   if (!Array.isArray(imagesArray) || length <= 0) {
     return null;
+  }
+  
+  function useInterval(callback, delay) {
+    const savedCallbackFunc = useRef();
+  
+    useEffect(() => {
+      savedCallbackFunc.current = callback;
+    }, [callback]);
+  
+    useEffect(() => {
+      function tick() {
+        savedCallbackFunc.current();
+      }
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
   }
 
   return (
