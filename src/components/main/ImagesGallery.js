@@ -9,21 +9,16 @@ import {
 import styles from "./ImagesGallery.module.scss";
 
 const ImagesGallery = () => {
-
-  console.log([...nature]);
   return (
-    <>
-      <div className={styles.natureWrapper}>
-        {nature.map((natImg, index) => {
-          console.log(natImg);
-          return (
-            <div className={styles.natureWrapperImg}>
-              <img className={styles.image} src={natImg[index]} alt="aaa" key={index} />
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <div className={styles.natureWrapper}>
+      {nature.map((natImg, index) => {
+        return (
+          <div className={styles.natureWrapperImg} key={index}>
+            <img src={natImg} className={styles.image} alt="nature" />
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
