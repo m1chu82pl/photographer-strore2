@@ -6,7 +6,8 @@ const Footer = () => {
   return ( 
     <footer className={styles.footer}>
       <h6>© 2021 MONKEY FINGER // CREATIVE DIRECTOR-DEVELOPER</h6>
-      <h6>All Rights Reserved</h6>
+      <h6>All Rights Reserved ™</h6>
+      <h6 className={styles.version}>🆚  0.0.1</h6>
     </footer>
    );
 }
