@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
+import ImagesGallery from "../../components/main/ImagesGallery";
 
-// import Navigation from '../../components/main/Navigation';
-// import Section from '../../components/main/Section';
-// import Footer from '../../components/main/Footer';
+// import styles from "./NatureView.module.scss";
+
 
 const NatureView = () => {
-  return ( 
-    <><div>to jest nature</div>
+  return (
+    <>
+    <ImagesGallery/>
     </>
-   );
-}
- 
+  );
+};
+
 export default NatureView;

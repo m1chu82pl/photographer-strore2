@@ -5,13 +5,10 @@ import {
   IoIosArrowDropleftCircle,
 } from "react-icons/io";
 import styles from "./Slider.module.scss";
-// import './Slider.css';
 
 import slider1 from "../../assets/navigation/slider1.jpg";
 import slider2 from "../../assets/navigation/slider2.jpg";
 import slider3 from "../../assets/navigation/slider3.jpg";
-
-// const slideRef = React.createRef();
 
 const imagesArray = [slider1, slider2, slider3];
 
@@ -21,11 +18,10 @@ const ImageSlider = () => {
 
   useInterval(() => {
     nextSlide();
-  }, 3000);
+  }, 5000);
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-    
+    setCurrent(current === length - 1 ? 0 : current + 1);    
   };
 
   const prevSlide = () => {
@@ -83,5 +79,4 @@ const ImageSlider = () => {
     </IconContext.Provider>
   );
 };
-
 export default ImageSlider;

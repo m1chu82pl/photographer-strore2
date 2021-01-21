@@ -1,0 +1,14 @@
+.natureWrapper {
+  position: relative;
+  width: 100%;
+  height: 800px;
+
+  &Img {
+    width: 80%;
+    height: 100%;
+
+    .image {
+        object-fit: fill;      
+    }
+  }
+}
