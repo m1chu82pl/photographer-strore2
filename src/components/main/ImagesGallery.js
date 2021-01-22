@@ -9,13 +9,17 @@ import {
 import styles from "./ImagesGallery.module.scss";
 
 const ImagesGallery = () => {
-  const [isHidden, setIsHidden] = useState(true)
+  const [isHidden, setIsHidden] = useState(true);
+  const [clickedImg, setClickedImg] = useState(null)
 
-  const handleShowImages = () => {
+  const handleShowImages = (index) => {
     setIsHidden(!isHidden);
+    // console.log(index);
+    setClickedImg(nature[index]);
   }
   
-console.log(isHidden);
+  // console.log(isHidden);
+  // console.log("clickedImg ", typeof(clickedImg));
   return (
 <>
     {isHidden ? (
@@ -23,12 +27,12 @@ console.log(isHidden);
       {nature.map((natImg, index) => {
         return (
           <div className={styles.natureWrapperImg} key={index}>
-            <img src={natImg} className={styles.image} onClick={handleShowImages} alt="nature" />
+            <img src={natImg} className={styles.image} onClick={() => handleShowImages(index)} alt="nature" />
           </div>
         );
       })}
     </div>
-    ) : (<div>aaa</div>)}
+    ) : (<div className={styles.clickedImgWrapper}><img src={clickedImg} alt=""/></div>)}
     </>
   );
 };

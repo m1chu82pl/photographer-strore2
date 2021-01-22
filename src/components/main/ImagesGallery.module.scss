@@ -28,3 +28,12 @@
     }
   }
 }
+
+.clickedImgWrapper {
+  position: fixed;
+  top: 20px;
+  left: 30px;
+  width: 80%;
+  height: 100vh;
+  overflow-y: hidden;
+}

@@ -3,5 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   /* font-size: 62,5%; */
-  color: rgb(172, 161, 142);
+  color: rgb(172, 161, 142);  
+}
+  /* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
