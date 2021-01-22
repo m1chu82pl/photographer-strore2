@@ -12,7 +12,7 @@ import slider3 from "../../assets/navigation/slider3.jpg";
 
 const imagesArray = [slider1, slider2, slider3];
 
-const ImageSlider = () => {
+const Slider = () => {
   const [current, setCurrent] = useState(0);
   const length = imagesArray.length;
 
@@ -79,4 +79,4 @@ const ImageSlider = () => {
     </IconContext.Provider>
   );
 };
-export default ImageSlider;
+export default Slider;
