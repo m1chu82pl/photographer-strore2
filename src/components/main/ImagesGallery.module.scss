@@ -1,5 +1,4 @@
 .natureWrapper {
-  // position: relative;
   width: 80%;
   margin: 10px auto;
   background: rgb(255, 255, 255);
@@ -7,12 +6,9 @@
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(20%, 1fr));
   gap: 10px;
-  // align-content: space-between;
-  // justify-content: space-around;
 
   &Img {
     background: rgb(82, 82, 82);
-    // border: dotted 2px brown;
 
     .image {
       width: 100%;
