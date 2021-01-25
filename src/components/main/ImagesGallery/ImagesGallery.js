@@ -8,19 +8,40 @@ const ImagesGallery = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [clickedImg, setClickedImg] = useState(null);
 
-  const actualPathName = window.location.pathname.slice(1);
+  let actualPathName = window.location.pathname.slice(1);
+  let altName = window.location.pathname.slice(1)
+
+  switch (actualPathName) {
+    case "nature":
+      actualPathName = nature;
+    break;
+    case "portrait":
+      actualPathName = portrait;
+    break;
+    case "documentary":
+      actualPathName = documentary;
+    break;
+    case "architecture":
+      actualPathName = architecture;
+    break;
+    default:
+      actualPathName = "";
+  }
+
+  console.log("actualPathName: ", actualPathName);
+
 
   const handleShowImages = (index) => {
     setIsHidden(!isHidden);
-    setClickedImg(nature[index]);
+    setClickedImg(actualPathName[index]);
   };
 
   return (
     <>
       {isHidden ? (
-        <ManyView nature={nature} showImages={handleShowImages} />
+        <ManyView actualPathName={actualPathName} showImages={handleShowImages} />
       ) : (
-        <OneView actualPathName={actualPathName} clickedImg={clickedImg} />
+        <OneView altName={altName} clickedImg={clickedImg} />
       )}
     </>
   );

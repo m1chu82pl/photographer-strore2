@@ -2,12 +2,12 @@ import React from "react";
 
 import styles from "./ImagesGallery.module.scss";
 
-const OneView = ( {actualPathName, clickedImg} ) => {
+const OneView = ( {altName, clickedImg} ) => {
   return ( <div className={styles.clickedImgWrapper}>
     <img
       src={clickedImg}
       className={styles.clickedImg}
-      alt={actualPathName}
+      alt={altName}
     />
   </div> );
 }
