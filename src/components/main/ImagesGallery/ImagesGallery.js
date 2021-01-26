@@ -40,8 +40,13 @@ const ImagesGallery = () => {
   }
 
   const handleShowPrevImage = () => {
-    setImageIndex(imageIndex -1);
-    setClickedImg(actualPathName[imageIndex -1]);
+    setImageIndex(imageIndex === 0 ? actualPathName.length - 1 : imageIndex - 1);
+    setClickedImg(actualPathName[imageIndex]);
+  }
+  
+  const handleShowNextImage = () => {
+    setImageIndex(imageIndex  === actualPathName.length - 1 ? 0 : imageIndex + 1);
+    setClickedImg(actualPathName[imageIndex]);
   }
   
   return (
@@ -49,7 +54,7 @@ const ImagesGallery = () => {
       {isHidden ? (
         <ManyView actualPathName={actualPathName} showImages={handleShowImage} />
       ) : (
-        <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} handleShowPrevImage={handleShowPrevImage} />
+        <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} handleShowNextImage={handleShowNextImage} handleShowPrevImage={handleShowPrevImage} />
       )}
     </>
   );
