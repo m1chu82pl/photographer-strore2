@@ -7,6 +7,7 @@ import OneView from "./OneView";
 const ImagesGallery = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [clickedImg, setClickedImg] = useState(null);
+  const [imageIndex, setImageIndex] = useState(null)
 
   let actualPathName = window.location.pathname.slice(1);
   let altName = window.location.pathname.slice(1)
@@ -26,27 +27,31 @@ const ImagesGallery = () => {
     break;
     default:
       actualPathName = "";
-  }
-
+  }  
   
-  
-  const handleShowImages = (index) => {
+  const handleShowImage = (index) => {
     setIsHidden(!isHidden);
+    setImageIndex(index)
+    // console.log("actualPathName: ", actualPathName[index]);
     setClickedImg(actualPathName[index]);
-    // console.log("actualPathName: ", actualPathName);
   };
   
   const handleHideImage = () => {
     setIsHidden(true);
   }
+
+  const handleShowPrevImage = () => {
+    setClickedImg(actualPathName[imageIndex - 1]);
+    console.log("actualPathName: ", actualPathName[imageIndex]);
+  }
   
-  console.log("isHidden: ", isHidden);
+  // console.log("isHidden: ", isHidden);
   return (
     <>
       {isHidden ? (
-        <ManyView actualPathName={actualPathName} showImages={handleShowImages} />
+        <ManyView actualPathName={actualPathName} showImages={handleShowImage} />
       ) : (
-        <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} />
+        <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} handleShowPrevImage={handleShowPrevImage} />
       )}
     </>
   );
