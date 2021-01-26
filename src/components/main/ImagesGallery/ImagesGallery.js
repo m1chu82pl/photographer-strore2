@@ -31,8 +31,7 @@ const ImagesGallery = () => {
   
   const handleShowImage = (index) => {
     setIsHidden(!isHidden);
-    setImageIndex(index)
-    // console.log("actualPathName: ", actualPathName[index]);
+    setImageIndex(index);
     setClickedImg(actualPathName[index]);
   };
   
@@ -41,11 +40,10 @@ const ImagesGallery = () => {
   }
 
   const handleShowPrevImage = () => {
-    setClickedImg(actualPathName[imageIndex - 1]);
-    console.log("actualPathName: ", actualPathName[imageIndex]);
+    setImageIndex(imageIndex -1);
+    setClickedImg(actualPathName[imageIndex -1]);
   }
   
-  // console.log("isHidden: ", isHidden);
   return (
     <>
       {isHidden ? (
