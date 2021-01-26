@@ -27,7 +27,7 @@
 
 .clickedImgWrapper {
   position: fixed;
-  top: 50%;
+  top: calc(50% + 25px);
   left: 50%;
   width: 100%;
   height: 75vh;
@@ -49,6 +49,9 @@
     width: 50%;
     height: 100%;
     background-color: rgba(95, 158, 160, 0);
+    &:hover {
+      cursor: pointer;
+    }
 
     &Arrow {
       position: absolute;
@@ -69,6 +72,9 @@
     width: 50%;
     height: 100%;
     background-color: rgba(95, 158, 160, 0);
+    &:hover {
+      cursor: pointer;
+    }
 
     &Arrow {
       position: absolute;
@@ -80,5 +86,19 @@
       cursor: pointer;
       user-select: none;
     }
+  }
+
+  .backButton {
+    position: absolute;
+    top: 90%;
+    right: 10vw;
+    padding: 15px 20px;
+    font-size: 2rem;
+    color: rgb(124, 124, 124);
+    border: 2px darkgreen dotted;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
   }
 }

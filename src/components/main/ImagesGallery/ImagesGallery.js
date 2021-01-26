@@ -28,20 +28,25 @@ const ImagesGallery = () => {
       actualPathName = "";
   }
 
-  console.log("actualPathName: ", actualPathName);
-
-
+  
+  
   const handleShowImages = (index) => {
     setIsHidden(!isHidden);
     setClickedImg(actualPathName[index]);
+    // console.log("actualPathName: ", actualPathName);
   };
-
+  
+  const handleHideImage = () => {
+    setIsHidden(true);
+  }
+  
+  console.log("isHidden: ", isHidden);
   return (
     <>
       {isHidden ? (
         <ManyView actualPathName={actualPathName} showImages={handleShowImages} />
       ) : (
-        <OneView altName={altName} clickedImg={clickedImg} />
+        <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} />
       )}
     </>
   );
