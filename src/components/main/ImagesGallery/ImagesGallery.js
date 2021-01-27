@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { nature, portrait, documentary, architecture } from "../ImportImages";
 
 import ManyView from "./ManyView";
@@ -48,6 +48,11 @@ const ImagesGallery = () => {
     setImageIndex(imageIndex  === actualPathName.length - 1 ? 0 : imageIndex + 1);
     setClickedImg(actualPathName[imageIndex]);
   }
+
+  useEffect(() => {
+    setClickedImg(actualPathName[imageIndex]);
+    console.log("po renderze: zdjęcie: ", clickedImg, "index: ", imageIndex);
+  }, [actualPathName, clickedImg, imageIndex])
   
   return (
     <>
