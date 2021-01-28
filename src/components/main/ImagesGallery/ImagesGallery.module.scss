@@ -34,16 +34,20 @@
   top: calc(50% + 25px);
   left: 50%;
   width: 100%;
-  height: 75vh;
+  height: 90vh;
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   align-items: center;
 
   .clickedImg {
-    width: 95%;
-    height: auto;
+    width: auto;
+    // width: 90%;
+    // max-width: 95%;
+    // height: auto;
+    max-height: 90%;
     object-fit: cover;
+    // add landscape ( width: 90%; height: auto; ) and portrait ( max-height: 90%; width: auto; ) view
   }
 
   .prevImage {
