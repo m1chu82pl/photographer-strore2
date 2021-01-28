@@ -1,6 +1,7 @@
 .natureWrapper {
   width: 80%;
-  margin: 100px auto 0;
+  margin: 100px auto;
+  padding-bottom: 50px;
   background: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
@@ -40,8 +41,9 @@
   align-items: center;
 
   .clickedImg {
-    width: auto;
-    height: 100%;
+    width: 95%;
+    height: auto;
+    object-fit: cover;
   }
 
   .prevImage {
@@ -60,10 +62,11 @@
       top: 50%;
       left: 10vw;
       font-size: 2rem;
-      color: rgb(124, 124, 124);
+      color: rgba(124, 124, 124, 0);
       z-index: 1;
       cursor: pointer;
       user-select: none;
+      animation: arrowsAppear 9s;
     }
   }
 
@@ -83,10 +86,26 @@
       top: 50%;
       right: 10vw;
       font-size: 2rem;
-      color: rgb(124, 124, 124);
+      color: rgba(124, 124, 124, 0);
       z-index: 1;
       cursor: pointer;
       user-select: none;
+      animation: arrowsAppear 9s 1s;
+    }
+  }
+
+  @keyframes arrowsAppear {
+    0% {
+      color: rgba(124, 124, 124, 0);
+    }
+    10% {
+      color: rgb(168, 158, 18);
+    }
+    90% {
+      color: rgb(124, 124, 124);
+    }
+    100% {
+      color: rgba(124, 124, 124, 0);
     }
   }
 
@@ -96,11 +115,35 @@
     right: 10vw;
     padding: 15px 20px;
     font-size: 2rem;
-    color: rgb(124, 124, 124);
-    border: 2px rgb(124, 124, 124) dotted;
+    color: rgba(124, 124, 124, 0.5);
+    border: 2px rgba(124, 124, 124, 0.5) dotted;
     border-radius: 50%;
     z-index: 10;
     cursor: pointer;
     user-select: none;
+    animation: backButtonAppear 9s;
+  }
+
+  @keyframes backButtonAppear {
+    0% {
+      color: rgba(168, 158, 18, 0);
+      border: 2px rgba(124, 124, 124, 0) dotted;
+    }
+    30% {
+      color: rgba(168, 158, 18, 0);
+      border: 2px rgba(124, 124, 124, 0) dotted;
+    }
+    45% {
+      color: rgb(168, 158, 18);
+      border: 2px rgba(124, 124, 124, 0) dotted;
+    }
+    90% {
+      color: rgb(124, 124, 124);
+      border: 2px rgb(124, 124, 124) dotted;
+    }
+    100% {
+      color: rgba(124, 124, 124, 0.5);
+      border: 2px rgba(124, 124, 124, 0.5) dotted;
+    }
   }
 }
