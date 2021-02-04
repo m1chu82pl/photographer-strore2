@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import styles from "./App.module.scss";
-// import firebase from "./firebase";
+import firebase from "../../firebase";
 
 import HomeView from "../HomeView/HomeView";
 import NatureView from "../NatureView/NatureView";
@@ -12,17 +12,17 @@ import ArchitectureView from "../ArchitectureView/ArchitectureView";
 
 function App() {
   useEffect(() => {
-    // firebase
-    //   .messaging()
-    //   .getToken()
-    //   .then((token) => {
-    //     console.log(Notification.permission);
-    //     if(Notification.permission !== 'granted') return;
-    //     firebase.database().ref('/tokens').push([
-    //       token,
-    //     ]);
-    //     console.log(`token: ${token}`);})
-    //   .catch(() => console.log("user didn't give permission"));
+    firebase
+      .messaging()
+      .getToken()
+      .then((token) => {
+        console.log(Notification.permission);
+        if(Notification.permission !== 'granted') return;
+        firebase.database().ref('/tokens').push([
+          token,
+        ]);
+        console.log(`token: ${token}`);})
+      .catch(() => console.log("user didn't give permission"));
   }, []);
 
   return (
