@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 
 import styles from "./Footer.module.scss";
 
 const Footer = () => {
-  return ( 
+const initialDate = new Date();
+const year = initialDate.getFullYear();
+  return (
     <footer className={styles.footer}>
-      <h6>© 2021 MONKEY FINGER // CREATIVE DIRECTOR-DEVELOPER</h6>
+      <h6>© 2020 - {year} MONKEY FINGER // CREATIVE DIRECTOR-DEVELOPER</h6>
       <h6>All Rights Reserved ™</h6>
-      <h6 className={styles.version}>🆚  0.0.1</h6>
+      <h6 className={styles.version}>🆚 0.0.1</h6>
     </footer>
-   );
-}
- 
+  );
+};
+
 export default Footer;

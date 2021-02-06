@@ -1,19 +1,17 @@
 import React from "react";
-
 import styles from "./ImagesGallery.module.scss";
 
-
-const ManyView = ({ actualPathName, nature, showImages }) => {
+const ManyView = ({ actualPathName, altName, showImages }) => {
   return ( 
-    <div className={styles.natureWrapper}>
-          {actualPathName.map((natImg, index) => {
+    <div className={styles.wrapper}>
+          {actualPathName.map((imageSrc, index) => {
             return (
-              <div className={styles.natureWrapperImg} key={index}>
+              <div className={styles.wrapperImg} key={index}>
                 <img
-                  src={natImg}
+                  src={imageSrc}
                   className={styles.image}
                   onClick={() => showImages(index)}
-                  alt={actualPathName}
+                  alt={altName}
                 />
               </div>
             );

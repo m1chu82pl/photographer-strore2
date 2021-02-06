@@ -1,4 +1,4 @@
-const cacheName = 'siteStatic-v357';
+const cacheName = 'siteStatic-v1';
 const assets = [
     '/',
     '/index.html',
@@ -7,21 +7,17 @@ const assets = [
 const self = this;
 
 self.addEventListener('install', e => {
-    console.log('ServiceWorker: Install');
     e.waitUntil(
         caches.open(cacheName).then(cache => {
-            console.log('ServiceWorker: Caching app shell');
             return cache.addAll(assets);
         })
     );
 });
 
 self.addEventListener("activate", e => {
-    console.log("ServiceWorker: Activ");
 });
 
 self.addEventListener('fetch', e => {
-    // console.log(e.request);
     if (!(e.request.url.includes('http'))) return;   
     e.respondWith(
       caches

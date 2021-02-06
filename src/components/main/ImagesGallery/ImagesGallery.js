@@ -10,7 +10,7 @@ const ImagesGallery = () => {
   const [imageIndex, setImageIndex] = useState(null)
 
   let actualPathName = window.location.pathname.slice(1);
-  let altName = window.location.pathname.slice(1)
+  const altName = window.location.pathname.slice(1)
 
   switch (actualPathName) {
     case "nature":
@@ -57,7 +57,7 @@ const ImagesGallery = () => {
   return (
     <>
       {isHidden ? (
-        <ManyView actualPathName={actualPathName} showImages={handleShowImage} />
+        <ManyView altName={altName} actualPathName={actualPathName} showImages={handleShowImage} />
       ) : (
         <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} handleShowNextImage={handleShowNextImage} handleShowPrevImage={handleShowPrevImage} />
       )}
