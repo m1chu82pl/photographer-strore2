@@ -9,15 +9,9 @@ const Navigation = () => {
 
   const ulRef = useCallback((node) => {
     if (node !== null) {
-      // setNavPosition(node.getBoundingClientRect().y.toFixed(1));
       setNavPosition(node.offsetTop.toFixed(1));
-      // console.log(node.getBoundingClientRect());
-      // console.log("-----TUTAJ-----", node.offsetTop);
     }
   }, []);
-
-  // console.log("nav position: ", navPosition);
-  // console.log("scroll: ", scrollPosition);
 
   const handleScroll = () => {
     const position = window.pageYOffset.toFixed(1);

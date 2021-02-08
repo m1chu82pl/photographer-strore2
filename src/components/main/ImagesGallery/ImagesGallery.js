@@ -7,10 +7,10 @@ import OneView from "./OneView";
 const ImagesGallery = () => {
   const [isHidden, setIsHidden] = useState(true);
   const [clickedImg, setClickedImg] = useState(null);
-  const [imageIndex, setImageIndex] = useState(null)
+  const [imageIndex, setImageIndex] = useState(null);
 
   let actualPathName = window.location.pathname.slice(1);
-  const altName = window.location.pathname.slice(1)
+  const altName = window.location.pathname.slice(1);
 
   switch (actualPathName) {
     case "nature":
@@ -51,8 +51,7 @@ const ImagesGallery = () => {
 
   useEffect(() => {
     setClickedImg(actualPathName[imageIndex]);
-    console.log("po renderze: zdjęcie: ", clickedImg, "index: ", imageIndex);
-  }, [actualPathName, clickedImg, imageIndex])
+  }, [actualPathName, clickedImg, imageIndex]);
   
   return (
     <>
