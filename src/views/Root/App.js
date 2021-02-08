@@ -16,13 +16,10 @@ function App() {
       .messaging()
       .getToken()
       .then((token) => {
-        console.log(Notification.permission);
-        if(Notification.permission !== 'granted') return;
-        firebase.database().ref('/tokens').push([
-          token,
-        ]);
-        console.log(`token: ${token}`);})
-      .catch(() => console.log("user didn't give permission"));
+        if (Notification.permission !== "granted") return;
+        firebase.database().ref("/tokens").push([token]);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (
@@ -31,7 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/nature" component={NatureView} />
-          <Route path="/match" render={({match}) => console.log(match)} />
+          <Route path="/match" render={({ match }) => console.log(match)} />
           <Route path="/portrait" component={PortraitView} />
           <Route path="/documentary" component={DocumentaryView} />
           <Route path="/architecture" component={ArchitectureView} />

@@ -2,8 +2,7 @@ import React from "react";
 import Navigation from "../../components/main/Navigation";
 import ImagesGallery from "../../components/main/ImagesGallery/ImagesGallery";
 
-import styles from '../Views.module.scss'
-
+import styles from '../Views.module.scss';
 
 const ArchitectureView = () => {
   return (
