@@ -1,13 +1,13 @@
-import firebase from 'firebase';
+import firebase from "firebase";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCbeRZZbeunab48UDM78x9Qc3jc-2eqr4w",
-  authDomain: "photographerstore-firebase.firebaseapp.com",
-  projectId: "photographerstore-firebase",
-  storageBucket: "photographerstore-firebase.appspot.com",
-  messagingSenderId: "805122346153",
-  appId: "1:805122346153:web:400dfe18ed9f32b37aedb8"
-  };
+  apiKey: "AIzaSyAiaWzFdwsJL3VDQ-8I8CWxlo5F3jzUr0E",
+  authDomain: "photographer-store.firebaseapp.com",
+  projectId: "photographer-store",
+  storageBucket: "photographer-store.appspot.com",
+  messagingSenderId: "51661735397",
+  appId: "1:51661735397:web:30e7b5d14eaf511bd2db0c",
+};
 
 firebase.initializeApp(firebaseConfig);
 

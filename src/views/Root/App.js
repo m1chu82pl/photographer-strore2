@@ -16,6 +16,7 @@ function App() {
       .messaging()
       .getToken()
       .then((token) => {
+        console.log("token: ", token);
         if (Notification.permission !== "granted") return;
         firebase.database().ref("/tokens").push([token]);
       })
