@@ -14,13 +14,9 @@ const ClickedImgWrapper = styled.div`
 `;
 
 const ClickedImg = styled.img`
-  width: auto;
-  /* width: 90%; */
-  /* max-width: 95%; */
-  /* height: auto; */
-  max-height: 90%;
-  object-fit: cover;
-  /* add landscape ( width: 90%; height: auto; ) and portrait ( max-height: 90%; width: auto; ) view */
+  width: 80vw;
+  height: 90vh;
+  object-fit: contain;
 `;
 
 const PrevImage = styled.div`
