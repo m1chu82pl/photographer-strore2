@@ -29,7 +29,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/nature" component={NatureView} />
-          <Route path="/match" render={({ match }) => console.log(match)} />
           <Route path="/portrait" component={PortraitView} />
           <Route path="/documentary" component={DocumentaryView} />
           <Route path="/architecture" component={ArchitectureView} />
