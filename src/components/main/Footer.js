@@ -1,17 +1,31 @@
 import React from "react";
+import styled from "styled-components";
 
-import styles from "./Footer.module.scss";
+const Wrapper = styled.footer`
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  padding: 5px 0;
+  background-color: #d4d4d4;
+`;
+
+const Version = styled.h6`
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+`;
 
 const Footer = () => {
   const initialDate = new Date();
   const year = initialDate.getFullYear();
-  
+
   return (
-    <footer className={styles.footer}>
+    <Wrapper>
       <h6>© 2020 - {year} MONKEY FINGER // CREATIVE DIRECTOR-DEVELOPER</h6>
       <h6>All Rights Reserved ™</h6>
-      <h6 className={styles.version}>🆚 ➡ {process.env.REACT_APP_VERSION}</h6>
-    </footer>
+      <Version>🆚 ➡ {process.env.REACT_APP_VERSION}</Version>
+    </Wrapper>
   );
 };
 
