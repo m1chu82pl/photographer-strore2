@@ -1,7 +1,6 @@
-import React from "react";
 import styled, { keyframes } from "styled-components";
 
-const ClickedImgWrapper = styled.div`
+export const ClickedImgWrapper = styled.div`
   position: fixed;
   top: calc(50% + 25px);
   left: 50%;
@@ -13,13 +12,13 @@ const ClickedImgWrapper = styled.div`
   align-items: center;
 `;
 
-const ClickedImg = styled.img`
+export const ClickedImg = styled.img`
   width: 80vw;
   height: 90vh;
   object-fit: contain;
 `;
 
-const PrevImage = styled.div`
+export const PrevImage = styled.div`
   position: absolute;
   top: 0;
   left: 0;
@@ -47,7 +46,7 @@ const arrowsAppear = keyframes`
     }
 `;
 
-const PrevImageArrow = styled.div`
+export const PrevImageArrow = styled.div`
   position: absolute;
   top: 50%;
   left: 10vw;
@@ -59,7 +58,7 @@ const PrevImageArrow = styled.div`
   animation: ${arrowsAppear} 9s;
 `;
 
-const NextImage = styled.div`
+export const NextImage = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -72,7 +71,7 @@ const NextImage = styled.div`
   }
 `;
 
-const NextImageArrow = styled.div`
+export const NextImageArrow = styled.div`
   position: absolute;
   top: 50%;
   right: 10vw;
@@ -107,7 +106,7 @@ const backButtonAppear = keyframes`
     }
 `;
 
-const BackButton = styled.div`
+export const BackButton = styled.div`
   position: absolute;
   top: 90%;
   right: 10vw;
@@ -121,26 +120,3 @@ const BackButton = styled.div`
   user-select: none;
   animation: ${backButtonAppear} 9s;
 `;
-
-const OneView = ({
-  altName,
-  clickedImg,
-  handleHideImage,
-  handleShowNextImage,
-  handleShowPrevImage,
-}) => {
-  return (
-    <ClickedImgWrapper>
-      <PrevImage onClick={handleShowPrevImage}>
-        <PrevImageArrow> ⬅ </PrevImageArrow>
-      </PrevImage>
-      <NextImage onClick={handleShowNextImage}>
-        <NextImageArrow> ➡ </NextImageArrow>
-        <BackButton onClick={handleHideImage}> ↩ </BackButton>
-      </NextImage>
-      <ClickedImg src={clickedImg} alt={altName} />
-    </ClickedImgWrapper>
-  );
-};
-
-export default OneView;

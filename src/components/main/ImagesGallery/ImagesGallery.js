@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { nature, portrait, documentary, architecture } from "../ImportImages";
 
-import ManyView from "./ManyView";
-import OneView from "./OneView";
+import ManyViews from "./ImagesViews/ManyViews";
+import OneView from "./ImagesViews/OneView";
 
 const ImagesGallery = () => {
   const [isHidden, setIsHidden] = useState(true);
@@ -56,7 +56,7 @@ const ImagesGallery = () => {
   return (
     <>
       {isHidden ? (
-        <ManyView altName={altName} actualPathName={actualPathName} showImages={handleShowImage} />
+        <ManyViews altName={altName} actualPathName={actualPathName} showImages={handleShowImage} />
       ) : (
         <OneView altName={altName} clickedImg={clickedImg} handleHideImage={handleHideImage} handleShowNextImage={handleShowNextImage} handleShowPrevImage={handleShowPrevImage} />
       )}

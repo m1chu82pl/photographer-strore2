@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   width: 80%;
   margin: 100px auto;
   padding-bottom: 50px;
@@ -12,7 +11,7 @@ const Wrapper = styled.div`
   gap: 10px;
 `;
 
-const WrapperImg = styled.div`
+export const WrapperImg = styled.div`
   background: rgb(82, 82, 82);
   width: 100%;
   height: 100%;
@@ -25,30 +24,10 @@ const WrapperImg = styled.div`
       }
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   user-select: none;
   cursor: pointer;  
 `;
-
-const ManyView = ({ actualPathName, altName, showImages }) => {
-  return (
-    <Wrapper>
-      {actualPathName.map((imageSrc, index) => {
-        return (
-          <WrapperImg key={index}>
-            <Image
-              src={imageSrc}
-              onClick={() => showImages(index)}
-              alt={altName}
-            />
-          </WrapperImg>
-        );
-      })}
-    </Wrapper>
-  );
-};
-
-export default ManyView;
