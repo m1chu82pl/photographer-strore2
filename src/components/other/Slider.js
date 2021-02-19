@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import { IconContext } from "react-icons";
 import {
-  IoIosArrowDroprightCircle,
-  IoIosArrowDropleftCircle,
-} from "react-icons/io";
-import styles from "./Slider.module.scss";
+  Wrapper,
+  DropLeftCircle,
+  DropRightCircle,
+  SlideActive,
+  Image,
+} from "./Slider.styled";
 
 import slider1 from "../../assets/navigation/slider1.jpg";
 import slider2 from "../../assets/navigation/slider2.jpg";
@@ -21,7 +22,7 @@ const Slider = () => {
   }, 5000);
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);    
+    setCurrent(current === length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
@@ -31,14 +32,14 @@ const Slider = () => {
   if (!Array.isArray(imagesArray) || length <= 0) {
     return null;
   }
-  
+
   function useInterval(callback, delay) {
     const savedCallbackFunc = useRef();
-  
+
     useEffect(() => {
       savedCallbackFunc.current = callback;
     }, [callback]);
-  
+
     useEffect(() => {
       function tick() {
         savedCallbackFunc.current();
@@ -51,32 +52,19 @@ const Slider = () => {
   }
 
   return (
-    <IconContext.Provider value={{ className: `${styles.reactIcons}` }}>
-      <section className={styles.slider}>
-        <IoIosArrowDropleftCircle
-          className={styles.leftArrow}
-          onClick={prevSlide}
-        />
-        <IoIosArrowDroprightCircle
-          className={styles.rightArrow}
-          onClick={nextSlide}
-        />
-        {imagesArray.map((slide, index) => {
-          return (
-            <div
-              className={
-                index === current ? `${styles.slideActive}` : `${styles.slide}`
-              }
-              key={index}
-            >
-              {index === current && (
-                <img src={slide} alt="travel" className={styles.image} />
-              )}
-            </div>
-          );
-        })}
-      </section>
-    </IconContext.Provider>
+    <Wrapper>
+      <DropLeftCircle onClick={prevSlide} />
+      <DropRightCircle onClick={nextSlide} />
+      {imagesArray.map(
+        (slide, index) =>
+          index === current && (
+            <SlideActive key={index}>
+              <Image src={slide} alt="travel" />
+            </SlideActive>
+          )
+      )}
+    </Wrapper>
   );
 };
+
 export default Slider;

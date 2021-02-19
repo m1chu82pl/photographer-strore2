@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Navigation from '../../components/main/Navigation/Navigation';
 import Section from '../../components/main/Section';
+import Navigation from '../../components/main/Navigation/Navigation';
 import Footer from '../../components/main/Footer/Footer';
 
 const HomeView = () => {

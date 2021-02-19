@@ -1,15 +1,29 @@
 import React from "react";
-import styles from "./Section.module.scss";
+import styled from "styled-components";
 
-import Slider from '../other/Slider';
+import Slider from "../other/Slider";
+
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+`;
+
+const ArticleInSection = styled.h2`
+  position: absolute;
+  top: 115vh;
+  left: 0;
+  text-align: center;
+  font-size: 32px;
+`;
 
 const Section = () => {
   return (
     <>
-      <div className={styles.section}>
-        <Slider/>
-        </div>
-      <h2 className={styles.sectionArticle}>
+      <Wrapper>
+        <Slider />
+      </Wrapper>
+      <ArticleInSection>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque
         exercitationem in cum soluta perferendis debitis voluptatibus deserunt,
         praesentium ipsa itaque libero esse asperiores architecto vero delectus
@@ -56,7 +70,7 @@ const Section = () => {
         tempora expedita aut, veniam eligendi minima? Quidem, eum. Cum veniam
         mollitia dolores temporibus illo cupiditate hic nam doloremque ex id
         velit, quibusdam iusto quae labore facilis, nisi odio? Possimus!
-      </h2>
+      </ArticleInSection>
     </>
   );
 };
