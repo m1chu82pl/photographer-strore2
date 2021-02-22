@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import styled from 'styled-components';
 
-import styles from "./App.module.scss";
 import firebase from "../../firebase";
 
 import HomeView from "../HomeView/HomeView";
@@ -9,6 +9,12 @@ import NatureView from "../NatureView/NatureView";
 import PortraitView from "../PortraitView/PortraitView";
 import DocumentaryView from "../DocumentaryView/DocumentaryView";
 import ArchitectureView from "../ArchitectureView/ArchitectureView";
+
+const Wrapper = styled.div`
+position: absolute;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+`;
 
 function App() {
   useEffect(() => {
@@ -25,7 +31,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={styles.app}>
+      <Wrapper>
         <Switch>
           <Route exact path="/" component={HomeView} />
           <Route path="/nature" component={NatureView} />
@@ -33,7 +39,7 @@ function App() {
           <Route path="/documentary" component={DocumentaryView} />
           <Route path="/architecture" component={ArchitectureView} />
         </Switch>
-      </div>
+      </Wrapper>
     </BrowserRouter>
   );
 }
