@@ -7,11 +7,23 @@ export const Wrapper = styled.ul`
   background-color: rgb(212, 212, 212);
   display: grid;
   grid-template-columns: repeat(5, auto);
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   `;
 
 export const NavigationPoint = styled.li`
   list-style: none;
   margin: 10px auto;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    /* flex-basis: 50%; */
+    margin: 0;
+  }
   `;
 
 export const NavLinks = styled(NavLink)`
@@ -39,4 +51,14 @@ export const WrapperSticky = styled.div`
 
   export const WrapperStickyNav = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, auto);`
+    grid-template-columns: repeat(5, auto);
+    
+    @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* margin: 5px; */
+  }
+    `;

@@ -13,7 +13,8 @@ import ArchitectureView from "../ArchitectureView/ArchitectureView";
 const Wrapper = styled.div`
 position: absolute;
   width: 100%;
-  background-color: rgb(255, 255, 255);
+  min-width: 480px;
+  background-color: rgb(150, 150, 150);
 `;
 
 function App() {

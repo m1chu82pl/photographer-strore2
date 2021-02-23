@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 80%;
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   padding-bottom: 50px;
   background: rgb(255, 255, 255);
   display: grid;

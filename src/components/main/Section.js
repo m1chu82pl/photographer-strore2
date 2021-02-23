@@ -15,7 +15,7 @@ const ArticleInSection = styled.h2`
   /* left: 0; */
   margin: 50px;
   text-align: center;
-  font-size: 32px;
+  font-size: 28px;
 `;
 
 const Section = () => {
