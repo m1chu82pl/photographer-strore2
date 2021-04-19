@@ -3,17 +3,11 @@ import styled from "styled-components";
 
 
 const Wrapper = styled.div`
-  /* height: 100vh; */
-  /* height: auto; */
   width: 100%;
-  /* background-color: rgb(0, 0, 0); */
   `;
 
 const ArticleInSection = styled.h2`
-  /* position: absolute; */
-  /* top: 115vh; */
-  /* left: 0; */
-  margin: 50px;
+  margin: 100px 50px 0;
   text-align: center;
   font-size: 28px;
 `;

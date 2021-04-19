@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 
 
 export const Wrapper = styled.ul`
-  position: relative;
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 8vh;
   background-color: rgb(212, 212, 212);
   display: grid;
   grid-template-columns: repeat(5, auto);
@@ -18,10 +22,9 @@ export const Wrapper = styled.ul`
 
 export const NavigationPoint = styled.li`
   list-style: none;
-  margin: 10px auto;
+  margin: auto;
   text-align: center;
   @media screen and (max-width: 768px) {
-    /* flex-basis: 50%; */
     margin: 0;
   }
   `;
@@ -44,13 +47,14 @@ export const WrapperSticky = styled.div`
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
+  left: 0;  
   background-color: rgb(212, 212, 212);
   z-index: 10;
   `;
 
-  export const WrapperStickyNav = styled.div`
+export const WrapperStickyNav = styled.ul`
     display: grid;
+    height: 8vh;
     grid-template-columns: repeat(5, auto);
     
     @media screen and (max-width: 768px) {
@@ -59,6 +63,5 @@ export const WrapperSticky = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* margin: 5px; */
   }
     `;
